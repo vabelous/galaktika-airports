@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "src",
     "downlevelIteration": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -14,7 +14,31 @@
     "target": "es2015",
     "typeRoots": [
       "node_modules/@types"
-    ],
+		],
+		"paths": {
+			"@air-components/*": ["app/common/components/*"],
+			"@air-modules/*": ["app/common/modules/*"],
+			"@air-services/*": ["app/common/services/*"],
+			"@air-models/*": ["app/common/models/*"],
+			"@air-scenarios/*": ["app/scenarios/*"],
+			"@air-layouts/*": ["app/layouts/*"],
+			"@air-pipes/*": ["app/common/pipes/*"],
+			"@air-directives/*": ["app/common/directives/*"],
+			"@air-interceptors/*": ["app/common/interceptors/*"],
+			"@air-widgets/*":["app/widgets/*"],
+			"@air-financial-widgets/*":["app/common/financial/*"],
+			"@air-utils/*":["app/common/utils/*"],
+			"@air-masks/*":["app/common/masks/*"],
+			"@air-validators/*":["app/common/validators/*"],
+			"@air-store/*":["app/common/store/*"],
+			"@air-containers/*":["app/common/containers/*"],
+			"@air-guards/*":["app/common/guards/*"],
+			"@air-actions/*":["app/common/store/actions/*"],
+			"@air-effects/*":["app/common/store/effects/*"],
+			"@air-reducers/*":["app/common/store/reducers/*"],
+			"@air-selectors/*":["app/common/store/selectors/*"],
+			"@air-factories/*":["app/common/factories/*"]
+	},
     "lib": [
       "es2018",
       "dom"
