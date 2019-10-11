@@ -2,13 +2,13 @@ import { Directive, HostBinding, OnInit, Input } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Directive({
-	selector: '[airSnt]'
+	selector: '[appSanitize]'
 })
 export class SanitizeDirective implements OnInit {
 
 	constructor(private sanitizer: DomSanitizer) {}
 
-	@Input('airSnt') innerText: string;
+	@Input('appSanitize') innerText: string;
 	@HostBinding('innerHtml') innerHtml: SafeHtml;
 
 	ngOnInit() {
