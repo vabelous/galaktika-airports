@@ -1,32 +1,27 @@
-import { FormControlService } from '@sfo-services/form-control.service';
+import { I18nModule } from '@air-modules/i18n.module';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 import { PagesMaterialModule } from './pages-material.module';
-import { I18nModule } from '@sfo-modules/i18n.module';
-import { LoginComponent } from './login';
-import { ForbiddenComponent } from './forbidden';
-import { NotFoundComponent } from './not-found';
 import { PagesRoutingModule } from './pages-routing.module';
-import { FieldStateService } from '@sfo-services/field-state.service';
+import { Error403Component } from './error-403';
+import { Error404Component } from './error-404';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
 	declarations: [
-		LoginComponent,
-		ForbiddenComponent,
-		NotFoundComponent,
+		Error403Component,
+		Error404Component
 	],
 	imports: [
 		I18nModule,
-		ReactiveFormsModule,
+		FlexLayoutModule,
 		PagesMaterialModule,
 		PagesRoutingModule,
 	],
 	exports: [
-		LoginComponent,
-		ForbiddenComponent,
-		NotFoundComponent,
+		Error403Component,
+		Error404Component
 	],
-	providers: [FormControlService, FieldStateService],
+
 })
 export class PagesModule { }
