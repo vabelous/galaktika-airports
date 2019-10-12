@@ -19,7 +19,6 @@ import { OderByPipe } from '@air-pipes/oder-by.pipe';
 		HighlightPipe,
 		FullTextSearchPipe,
 		OderByPipe,
-
 	]
 })
 export class CommonPipeModule { }

@@ -8,6 +8,5 @@ import { SanitizeDirective } from '@air-directives/sanitize.directive';
 	exports: [
 		SanitizeDirective
 	],
-
 })
 export class CommonDirectiveModule { }

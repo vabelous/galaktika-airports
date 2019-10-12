@@ -5,14 +5,15 @@ import { CommonDirectiveModule } from '@air-common/common-directive.module';
 
 @NgModule({
 	imports: [
+		RouterModule,
 		CommonPipeModule,
-		CommonDirectiveModule,
-		RouterModule
+		CommonDirectiveModule
+
 	],
 	exports: [
+		RouterModule,
 		CommonPipeModule,
-		CommonDirectiveModule,
-		RouterModule
+		CommonDirectiveModule
 	]
 })
 export class AppCommonModule { }
