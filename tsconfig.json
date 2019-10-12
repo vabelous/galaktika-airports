@@ -37,7 +37,8 @@
 			"@air-effects/*":["app/common/store/effects/*"],
 			"@air-reducers/*":["app/common/store/reducers/*"],
 			"@air-selectors/*":["app/common/store/selectors/*"],
-			"@air-factories/*":["app/common/factories/*"]
+			"@air-factories/*":["app/common/factories/*"],
+			"@air-common/*":["app/common/*"]
 	},
     "lib": [
       "es2018",
