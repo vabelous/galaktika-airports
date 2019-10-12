@@ -1,32 +1,25 @@
-import { FormControlService } from '@sfo-services/form-control.service';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { PagesMaterialModule } from './authentication-material.module';
-import { I18nModule } from '@sfo-modules/i18n.module';
+import { ConfirmationComponent } from './confirmation';
 import { LoginComponent } from './login';
-import { ForbiddenComponent } from './forbidden';
-import { NotFoundComponent } from './not-found';
-import { PagesRoutingModule } from './authentication-routing.module';
-import { FieldStateService } from '@sfo-services/field-state.service';
-
+import { RegistrationComponent } from './registration';
+import { ResetComponent } from './reset';
+import { RestoreComponent } from './restore';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AuthenticationMaterialModule } from './authentication-material.module';
+import { AuthenticationRoutingModule } from './authentication-routing.module';
 
 @NgModule({
 	declarations: [
+		ConfirmationComponent,
 		LoginComponent,
-		ForbiddenComponent,
-		NotFoundComponent,
+		RegistrationComponent,
+		ResetComponent,
+		RestoreComponent
 	],
 	imports: [
-		I18nModule,
 		ReactiveFormsModule,
-		PagesMaterialModule,
-		PagesRoutingModule,
+		AuthenticationMaterialModule,
+		AuthenticationRoutingModule,
 	],
-	exports: [
-		LoginComponent,
-		ForbiddenComponent,
-		NotFoundComponent,
-	],
-	providers: [FormControlService, FieldStateService],
 })
 export class AuthenticationModule { }

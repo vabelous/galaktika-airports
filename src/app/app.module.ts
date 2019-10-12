@@ -7,6 +7,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { Error403Component } from './pages/error403/error403.component';
 import { Error404Component } from './pages/error404/error404.component';
+import { AuthenticationModule } from './authentication/authentication.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { Error404Component } from './pages/error404/error404.component';
 		BrowserModule,
 		AppRoutingModule,
 		BrowserAnimationsModule,
+		AuthenticationModule,
 		StoreModule.forRoot(reducers, {
 			metaReducers,
 			runtimeChecks: {
