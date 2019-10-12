@@ -9,10 +9,10 @@ import { RestoreComponent } from './restore';
 @NgModule({
 	imports: [
 	RouterModule.forChild([
-		{
-			path: '',
-			component: AuthenticationComponent
-		},
+		// {
+		// 	path: '',
+		// 	component: AuthenticationComponent
+		// },
 		{
 			path: 'login',
 			component: LoginComponent

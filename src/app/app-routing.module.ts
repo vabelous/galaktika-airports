@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
+import { AuthenticationComponent } from './authentication/authentication';
 
 const config: ExtraOptions = {
 	useHash: true,
@@ -10,6 +11,7 @@ const config: ExtraOptions = {
 const routes: Routes = [
 	{
 		path: 'authentication',
+		component: AuthenticationComponent,
 		loadChildren: () => import('./authentication/authentication.module').then(loaded => loaded.AuthenticationModule)
 	},
 	{

@@ -7,6 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationMaterialModule } from './authentication-material.module';
 import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { AuthenticationComponent } from './authentication';
+import { I18nModule } from '@air-modules/i18n.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
 	declarations: [
@@ -17,6 +19,8 @@ import { AuthenticationComponent } from './authentication';
 		RestoreComponent
 	],
 	imports: [
+		I18nModule,
+		FlexLayoutModule,
 		ReactiveFormsModule,
 		AuthenticationMaterialModule,
 		AuthenticationRoutingModule,
