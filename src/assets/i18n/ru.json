@@ -7,7 +7,9 @@
 		"login": {
 			"titles": {
 				"enter": "Войти в аккаунт",
-				"forgot-password": "Забыли пароль?"
+				"forgot-password": "Забыли пароль ?",
+				"don-t-have-account": "Нет учетной записи ?",
+				"create-account": "Зарегистрироваться"
       }
 		}
 	},

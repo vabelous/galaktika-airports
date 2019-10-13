@@ -1,42 +1,49 @@
-<div class="form-container main">
+<div class="form-container main" fxLayout="column">
 	<div class="title">
 			{{ 'authentication.login.titles.enter' | translate }}
 	</div>
-<form
-[formGroup]="loginForm"
-(ngSubmit)="onSubmit()"
-fxLayout="column"
-class="form"
->
-<div formArrayName="ownControls">
-	<div *ngFor="let fc of ownControls.controls; let i=index" fxLayout="column">
-		<mat-form-field  appearance="outline">
-			<mat-label>{{(fc.label | async)}}</mat-label>
-				<input
-				[type]="fc.type"
-				[required]="fc.required"
-				[placeholder]="(fc.placeholder | async)"
-				[formControlName]="i"
-				matInput
-				>
-				<mat-icon matSuffix>{{fc.icon}}</mat-icon>
-		</mat-form-field>
+	<form
+	[formGroup]="loginForm"
+	(ngSubmit)="onSubmit()"
+	fxLayout="column"
+	class="form"
+	>
+		<div formArrayName="ownControls">
+			<div *ngFor="let fc of ownControls.controls; let i=index" fxLayout="column">
+				<mat-form-field  appearance="outline">
+					<mat-label>{{(fc.label | async)}}</mat-label>
+						<input
+						[type]="fc.type"
+						[required]="fc.required"
+						[placeholder]="(fc.placeholder | async)"
+						[formControlName]="i"
+						matInput
+						>
+						<mat-icon matSuffix>{{fc.icon}}</mat-icon>
+				</mat-form-field>
+			</div>
+		</div>
+		<div fxLayout="row" fxLayoutAlign="end center" fxFlex="0 0 auto">
+			<a  href="/authentication/restore">
+				{{ 'authentication.login.titles.forgot-password' | translate }}
+			</a>
+		</div>
+		<button
+			mat-button
+			mat-raised-button
+			type="submit"
+			[disabled]="!loginForm.valid"
+		>
+		Войти
+		</button>
+	</form>
+	<div class="create-account" fxLayout="column" fxLayoutAlign="center center" fxFlex="0 0 auto">
+		<span class="text">{{ 'authentication.login.titles.don-t-have-account' | translate }}</span>
+		<a class="link" href="/authentication/registration">
+			{{ 'authentication.login.titles.create-account' | translate }}
+		</a>
 	</div>
-</div>
-<div fxLayout="row" fxLayoutAlign="end center" fxFlex="0 0 auto">
-	<a  href="/authentication/restore">
-		{{ 'authentication.login.titles.forgot-password' | translate }}
-</a>
-</div>
 
-<button
-	mat-button
-	mat-raised-button
-	type="submit"
-	[disabled]="!loginForm.valid"
-	class="airport-app-theme"
->
-Войти
-</button>
-</form>
+
+
 </div>
