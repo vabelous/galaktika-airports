@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login';
-import { AuthenticationComponent } from './authentication';
 import { ConfirmationComponent } from './confirmation';
 import { RegistrationComponent } from './registration';
 import { RestoreComponent } from './restore';
@@ -9,10 +8,6 @@ import { RestoreComponent } from './restore';
 @NgModule({
 	imports: [
 	RouterModule.forChild([
-		// {
-		// 	path: '',
-		// 	component: AuthenticationComponent
-		// },
 		{
 			path: 'login',
 			component: LoginComponent
