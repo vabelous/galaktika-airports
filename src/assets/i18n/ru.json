@@ -1,63 +1,22 @@
 {
 	"pages": {
-		"login": {
-			"titles": {
-        "enter": "Вход в систему Единое Окно",
-        "icon": "МТС Единое Окно",
-        "description": "InternalAuth"
-      }
-    },
-    "forbidden": {
+    "error403": {
       "message": "К сожалению, у вас нет прав доступа к странице, которую вы хотите открыть",
       "back-link": "Вернуться на главную страницу"
     },
-    "not-found": {
+    "error404": {
       "message": "К сожалению, мы не можем найти страницу, которую вы искали",
       "back-link": "Вернуться на главную страницу"
     }
-
   },
-  "form-controls": {
+  "visitor": {
     "labels": {
       "login": "Логин",
       "password": "Пароль",
-      "msisdn": "Номер телефона",
-      "passport": "Паспорт",
-      "docSeries": "Серия",
-      "docNumber": "Номер",
-      "isRussianDocument":"РФ",
-      "contract": "Контракт",
-      "account": "ЛС",
-      "sim": "SIM",
-      "lastName": "Фамилия",
-      "firstName": "Имя",
-      "middleName": "Отчество",
-      "birth": "Дата рождения",
-      "inn": "ИНН",
-      "orgName": "Название организации",
-      "isArchive": "с историей",
-      "salePoint": "Точка продаж",
-      "searchProduct": "Продукт"
     },
     "placeholders": {
       "login": "Введите логин",
       "password": "Введте пароль",
-      "msisdn": "Номер телефона",
-      "passport": "Паспорт",
-      "docSeries": "Серия",
-      "docNumber": "Номер",
-      "contract": "Контракт",
-      "account": "ЛС",
-      "sim": "SIM",
-      "lastName": "Фамилия",
-      "firstName": "Имя",
-      "middleName": "Отчество",
-      "birth": "Дата рождения",
-      "inn": "ИНН",
-      "orgName": "Название организации",
-      "region": "Выберите регион",
-      "salePoint": "Выберите точку продаж",
-      "searchProduct": "Название продукта"
     }
   }
 }
