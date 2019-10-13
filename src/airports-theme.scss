@@ -127,6 +127,7 @@ $authentication-theme: (
   .mat-button:not([class*="mat-elevation-z"]),
   .mat-icon-button {
 		letter-spacing: 0.2em;
+		height: 44px;
     text-transform: uppercase;
     border-radius: 0 10px 0;
   }
