@@ -1,4 +1,11 @@
 {
+	"authentication": {
+		"login": {
+			"titles": {
+        "enter": "Войти в аккаунт"
+      }
+		}
+	},
 	"pages": {
     "error403": {
       "message": "К сожалению, у вас нет прав доступа к странице, которую вы хотите открыть",
@@ -12,11 +19,11 @@
   "visitor": {
     "labels": {
       "login": "Логин",
-      "password": "Пароль",
+      "password": "Пароль"
     },
     "placeholders": {
       "login": "Введите логин",
-      "password": "Введте пароль",
+      "password": "Введте пароль"
     }
   }
 }
