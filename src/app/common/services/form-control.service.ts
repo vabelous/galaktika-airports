@@ -49,6 +49,7 @@ export class FormControlService {
 		fc[this.fieldStateService.getFormControlProperty(FormControlProperties.disabled, field)]();
 		fc.placeholder = this.fieldStateService.getFormControlProperty(FormControlProperties.placeholder, field);
 		fc.mask = this.fieldStateService.getFormControlProperty(FormControlProperties.mask, field);
+		fc.icon = this.fieldStateService.getFormControlProperty(FormControlProperties.icon, field);
 		fc.label = this.fieldStateService.getFormControlProperty(FormControlProperties.label, field);
 		fc.required = this.fieldStateService.getFormControlProperty(FormControlProperties.required, field);
 		fc.name = field.toString();

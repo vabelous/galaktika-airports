@@ -1,3 +1,35 @@
-<p>
-  login works!
-</p>
+<div class="form-container">
+	<div>
+
+	</div>
+<form
+[formGroup]="loginForm"
+(ngSubmit)="onSubmit()"
+fxLayout="column"
+>
+<div formArrayName="ownControls">
+	<div *ngFor="let fc of ownControls.controls; let i=index" fxLayout="column">
+		<mat-form-field  appearance="outline">
+			<mat-label>{{(fc.label | async)}}</mat-label>
+				<input
+				type="text"
+				[required]="fc.required"
+				[placeholder]="(fc.placeholder | async)"
+				[formControlName]="i"
+				matInput
+				>
+				<mat-icon matSuffix>{{fc.icon}}</mat-icon>
+		</mat-form-field>
+	</div>
+</div>
+<button
+	mat-button
+	mat-raised-button
+	type="submit"
+	[disabled]="loginForm.valid"
+	class="airport-app-theme"
+>
+Войти
+</button>
+</form>
+</div>

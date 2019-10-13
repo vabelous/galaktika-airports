@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic&amp;subset=latin-ext');
+@import '~@angular/material/theming';
+@include mat-core();
+
+//////////////////////////////////////////////////////////////////////////////
+// Authentication
+//////////////////////////////////////////////////////////////////////////////
+
+$authentication-dark-primary-text: #9e8b22;
+$authentication-light-primary-text: #cedcfd;
+$authentication-color: (
+  50: #fffff7,
+  100: #fff1e7,
+  200: #ff968a,
+  300: #ff675b,
+  400: #ff515b,
+  500: #ff4060,
+  600: #f43e60,
+  700: #e63854,
+  800: #d82049,
+  900: #bf0c4b,
+  A100: #662424,
+  A200: #fffff7,
+  A400: #c5381c,
+  A700: #ffffff,
+  contrast: (
+    50: $authentication-dark-primary-text,
+    100: $authentication-dark-primary-text,
+    200: $authentication-dark-primary-text,
+    300: $authentication-dark-primary-text,
+    400: $authentication-dark-primary-text,
+    500: $authentication-light-primary-text,
+    600: $authentication-light-primary-text,
+    700: $authentication-light-primary-text,
+    800: $authentication-light-primary-text,
+    900: $authentication-light-primary-text,
+    A100: $authentication-dark-primary-text,
+    A200: $authentication-dark-primary-text,
+    A400: $authentication-light-primary-text,
+    A700: $authentication-light-primary-text,
+	)
+);
+
+$authentication-typography: mat-typography-config(
+  $font-family:   'Roboto, "Helvetica Neue", sans-serif',
+  $display-4:     mat-typography-level(112px, 112px, 300),
+  $display-3:     mat-typography-level(66px, 56px, 400),
+  $display-2:     mat-typography-level(55px, 48px, 400),
+  $display-1:     mat-typography-level(44px, 40px, 400),
+  $headline:      mat-typography-level(34px, 32px, 400),
+  $title:         mat-typography-level(30px, 32px, 500),
+  $subheading-2:  mat-typography-level(16px, 22px, 500),
+  $subheading-1:  mat-typography-level(15px, 24px, 400),
+  $body-2:        mat-typography-level(14px, 24px, 500),
+  $body-1:        mat-typography-level(14px, 30px, 400),
+  $caption:       mat-typography-level(12px, 20px, 400),
+  $button:        mat-typography-level(14px, 14px, 500),
+  $input:         mat-typography-level(inherit, 1.125, 400)
+);
+
+$authentication-light-theme-foreground: (
+  base:              $authentication-dark-primary-text,
+  divider:           $dark-dividers,
+  dividers:          $dark-dividers,
+  disabled:          $dark-disabled-text,
+  disabled-button:   rgba($authentication-dark-primary-text, 0.26),
+  disabled-text:     $dark-disabled-text,
+  hint-text:         $dark-disabled-text,
+  secondary-text:    $dark-secondary-text,
+  icon:              rgba($authentication-dark-primary-text, 0.54),
+  icons:             rgba($authentication-dark-primary-text, 0.54),
+  text:              rgba($authentication-dark-primary-text, 0.87),
+  slider-min:        rgba($authentication-dark-primary-text, 0.87),
+  slider-off:        rgba($authentication-dark-primary-text, 0.26),
+  slider-off-active: rgba($authentication-dark-primary-text, 0.38),
+);
+
+$authentication-light-theme-background: (
+  status-bar: $authentication-light-primary-text,
+  app-bar:    $authentication-light-primary-text,
+  background: $authentication-light-primary-text,
+  hover:      rgba($authentication-dark-primary-text, 0.04),
+  card:       mat-color($authentication-color, 100),
+  dialog:     mat-color($authentication-color, 100),
+  disabled-button: rgba($authentication-dark-primary-text, 0.04),
+  raised-button: mat-color($authentication-color, 100),
+  focused-button: $dark-focused,
+  selected-button: $authentication-light-primary-text,
+  selected-disabled-button: $authentication-light-primary-text,
+  disabled-button-toggle: $authentication-light-primary-text,
+  unselected-chip: $authentication-light-primary-text,
+  disabled-list-option: $authentication-light-primary-text,
+);
+
+$authentication-theme: (
+    primary: mat-palette($authentication-color, A200, A100, A400),
+    accent: mat-palette($mat-brown, 800, 700, 600),
+    warn: mat-palette($mat-red),
+    is-dark: false,
+    foreground: $authentication-light-theme-foreground,
+    background: $authentication-light-theme-background,
+);
+
+.authentication {
+  @include angular-material-theme($authentication-theme);
+  @include angular-material-typography($authentication-typography);
+  $background: mat-color($authentication-color, 100);
+  $primary: mat-color($authentication-color, A200);
+  $accent: mat-color($mat-brown, 500);
+  $warn: mat-color($mat-red, 500);
+  main {
+    background-color: $background;
+  }
+  a, a:hover, a:hover span {
+    color: $accent;
+    text-decoration: none;
+    outline: none;
+  }
+  h1, h2, h3, h4, h5, h6, h7 {
+    text-transform: uppercase;
+    color: $accent;
+  }
+  .mat-raised-button:not([class*="mat-elevation-z"]),
+  .mat-button:not([class*="mat-elevation-z"]),
+  .mat-icon-button {
+    text-transform: uppercase;
+    border-radius: 0 10px 0;
+  }
+  .mat-fab:not([class*="mat-elevation-z"]) {
+    text-transform: uppercase;
+    border-radius: 0 30px 0;
+  }
+  .mat-raised-button.back {
+    text-transform: uppercase;
+    color: $light-primary-text;
+    background-color: mat-color($mat-grey, A700);
+  }
+  .mat-card {
+    margin: 10px 10px 0 10px;
+  }
+  .mat-list .mat-list-item .mat-list-text h4.mat-line {
+    font-weight: 800;
+    color: $accent;
+  }
+  .mat-list .mat-list-item .mat-list-text p.mat-line {
+    color: $primary;
+  }
+  .mat-toolbar {
+    @extend .mat-accent;
+    @include mat-elevation(2);
+  }
+  .mat-form-field {
+    // background-color: mat-color($authentication-color, 100);
+		// color: $dark-primary-text;
+		color: $authentication-light-primary-text;
+		:focus {
+			color:  mat-color($authentication-color, 50);
+		}
+	}
+
+
+	.mat-form-field-appearance-outline .mat-form-field-outline  {
+		// background-color: rgba(136, 187, 147, 0.42);
+		color: $authentication-light-primary-text;
+	}
+
+  .mat-form-field.mat-form-field-warn {
+    // background-color: $warn;
+    color: $light-primary-text;
+	}
+
+	.mat-form-field .mat-form-field-focused .mat-form-field-label {
+		color:  mat-color($authentication-color, 50);
+	}
+	.mat-form-field-label {
+		color: $authentication-light-primary-text;
+	}
+	.mat-input-element,
+  ::placeholder {
+    color:  mat-color($authentication-color, 50),!important;
+  }
+}

@@ -1,5 +1,9 @@
 {
 	"authentication": {
+		"titles": {
+			"airports": "Аэропорты",
+			"test-task": "Тестовое задание"
+		},
 		"login": {
 			"titles": {
         "enter": "Войти в аккаунт"

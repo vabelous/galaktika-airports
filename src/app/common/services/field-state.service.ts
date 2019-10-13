@@ -17,6 +17,8 @@ export class FieldStateService {
 			return this.getValidatorsProperty(field);
 		case FormControlProperties.mask:
 			return this.getMaskProperty(field);
+		case FormControlProperties.icon:
+			return this.getIconProperty(field);
 		case FormControlProperties.defaultValue:
 			return this.getDefaultValueProperty(field);
 		case FormControlProperties.placeholder:
@@ -26,7 +28,7 @@ export class FieldStateService {
 		case FormControlProperties.required:
 			return this.getRequiredProperty(field);
 		default:
-			throw new Error(('Unknown kin of form control property!'));
+			throw new Error(('Unknown kind of form control property!'));
 		}
 	}
 
@@ -61,6 +63,17 @@ export class FieldStateService {
 		}
 	}
 
+	private getIconProperty(field: FormControlFields): string {
+		switch (field) {
+			case FormControlFields.Login:
+				return 'mail';
+			case FormControlFields.Password:
+				return 'vpn_key';
+			default:
+				return null;
+		}
+	}
+
 	private getDefaultValueProperty(field: FormControlFields): any {
 		switch (field) {
 			case FormControlFields.Login:
@@ -74,9 +87,9 @@ export class FieldStateService {
 	private getPlaceholderProperty(field: FormControlFields): Observable<string> {
 		switch (field) {
 			case FormControlFields.Login:
-				return this.translate.get('form-controls.placeholders.login');
+				return this.translate.get('visitor.placeholders.login');
 			case FormControlFields.Password:
-				return this.translate.get('form-controls.placeholders.password');
+				return this.translate.get('visitor.placeholders.password');
 			default:
 				return null;
 		}
@@ -85,9 +98,9 @@ export class FieldStateService {
 	private getLabelProperty(field: FormControlFields): Observable<string> {
 		switch (field) {
 			case FormControlFields.Login:
-				return this.translate.get('form-controls.labels.login');
+				return this.translate.get('visitor.labels.login');
 			case FormControlFields.Password:
-				return this.translate.get('form-controls.labels.password');
+				return this.translate.get('visitor.labels.password');
 			default:
 				return null;
 		}

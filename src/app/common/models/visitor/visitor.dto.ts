@@ -7,6 +7,7 @@ export class VisitorFormControl extends FormControl {
 	label?: string;
 	name?: string;
 	required?: boolean;
+	icon?: string;
 }
 
 export abstract class VisitorAbstractControl extends AbstractControl {
@@ -16,6 +17,7 @@ export abstract class VisitorAbstractControl extends AbstractControl {
 	label?: string;
 	name?: string;
 	required?: boolean;
+	icon?: string;
 }
 
 export class VisitorFormArray extends FormArray {

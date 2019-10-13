@@ -1,8 +1,11 @@
 <div class="page" fxLayout="row">
-	<div fxFlex>
-	1
+	<div class="promotion" fxFlex>
+		<div  class="title-block" fxLayout="column" fxFlex="0 0 auto">
+			<span class="title-1">{{ 'authentication.titles.airports' | translate }}</span>
+			<span class="title-2">{{ 'authentication.titles.test-task' | translate }}</span>
+		</div>
 	</div>
-	<div>
+	<div class="form">
 		<router-outlet></router-outlet>
 	</div>
 </div>

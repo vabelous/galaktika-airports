@@ -15,6 +15,7 @@ export enum FormControlProperties {
 	placeholder = 'placeholder',
 	label = 'label',
 	required = 'required',
+	icon= 'icon',
 }
 
 export enum DisabledPropertyTypes {
