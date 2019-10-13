@@ -11,7 +11,7 @@ $authentication-dark-primary-text: #9e8b22;
 $authentication-light-primary-text: #cedcfd;
 $authentication-color: (
   50: #fffff7,
-  100: #fff1e7,
+  100: #afcddb,
   200: #ff968a,
   300: #ff675b,
   400: #ff515b,
@@ -70,7 +70,7 @@ $authentication-light-theme-foreground: (
   secondary-text:    $dark-secondary-text,
   icon:              rgba($authentication-dark-primary-text, 0.54),
   icons:             rgba($authentication-dark-primary-text, 0.54),
-  text:              rgba($authentication-dark-primary-text, 0.87),
+  text:              rgba($authentication-light-primary-text, 0.87),
   slider-min:        rgba($authentication-dark-primary-text, 0.87),
   slider-off:        rgba($authentication-dark-primary-text, 0.26),
   slider-off-active: rgba($authentication-dark-primary-text, 0.38),
@@ -83,7 +83,7 @@ $authentication-light-theme-background: (
   hover:      rgba($authentication-dark-primary-text, 0.04),
   card:       mat-color($authentication-color, 100),
   dialog:     mat-color($authentication-color, 100),
-  disabled-button: rgba($authentication-dark-primary-text, 0.04),
+  disabled-button: rgba($authentication-light-primary-text, 0.2),
   raised-button: mat-color($authentication-color, 100),
   focused-button: $dark-focused,
   selected-button: $authentication-light-primary-text,
@@ -107,10 +107,11 @@ $authentication-theme: (
   @include angular-material-typography($authentication-typography);
   $background: mat-color($authentication-color, 100);
   $primary: mat-color($authentication-color, A200);
-  $accent: mat-color($mat-brown, 500);
+  $accent: mat-color($mat-brown, 200);
   $warn: mat-color($mat-red, 500);
-  main {
-    background-color: $background;
+  .main {
+		// background-color: $background;
+		color: $authentication-light-primary-text;
   }
   a, a:hover, a:hover span {
     color: $accent;
@@ -134,7 +135,7 @@ $authentication-theme: (
   .mat-raised-button.back {
     text-transform: uppercase;
     color: $light-primary-text;
-    background-color: mat-color($mat-grey, A700);
+    background-color: mat-color($mat-blue, A200);
   }
   .mat-card {
     margin: 10px 10px 0 10px;

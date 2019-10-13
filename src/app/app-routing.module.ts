@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AuthenticationComponent } from './authentication/authentication';
 
 const config: ExtraOptions = {
-	useHash: true,
+	useHash: false,
 	enableTracing: false
 };
 
@@ -20,7 +20,7 @@ const routes: Routes = [
 	},
 	{
 		path: '',
-		redirectTo: 'authentication/login',
+		redirectTo: '/authentication/login',
 		pathMatch: 'full'
 	},
 	{

@@ -8,6 +8,7 @@ export class VisitorFormControl extends FormControl {
 	name?: string;
 	required?: boolean;
 	icon?: string;
+	type?: string;
 }
 
 export abstract class VisitorAbstractControl extends AbstractControl {
@@ -18,6 +19,7 @@ export abstract class VisitorAbstractControl extends AbstractControl {
 	name?: string;
 	required?: boolean;
 	icon?: string;
+	type?: string;
 }
 
 export class VisitorFormArray extends FormArray {

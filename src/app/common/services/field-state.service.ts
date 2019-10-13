@@ -3,6 +3,7 @@ import { ValidatorFn, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/internal/Observable';
 import { TranslateService } from '@ngx-translate/core';
 import { FormControlProperties, FormControlFields, DisabledPropertyTypes } from '@air-models/visitor';
+import { emailValidator } from '@air-validators/email.validator';
 
 @Injectable({ providedIn: 'root' })
 export class FieldStateService {
@@ -19,6 +20,8 @@ export class FieldStateService {
 			return this.getMaskProperty(field);
 		case FormControlProperties.icon:
 			return this.getIconProperty(field);
+		case FormControlProperties.type:
+				return this.getTypeProperty(field);
 		case FormControlProperties.defaultValue:
 			return this.getDefaultValueProperty(field);
 		case FormControlProperties.placeholder:
@@ -45,7 +48,7 @@ export class FieldStateService {
 	private getValidatorsProperty(field: FormControlFields): Array<ValidatorFn> {
 		switch (field) {
 			case FormControlFields.Login:
-				return [Validators.required];
+				return [Validators.required, emailValidator];
 			case FormControlFields.Password:
 				return [Validators.required];
 			default:
@@ -69,6 +72,16 @@ export class FieldStateService {
 				return 'mail';
 			case FormControlFields.Password:
 				return 'vpn_key';
+			default:
+				return null;
+		}
+	}
+	private getTypeProperty(field: FormControlFields): string {
+		switch (field) {
+			case FormControlFields.Login:
+				return 'text';
+			case FormControlFields.Password:
+				return 'password';
 			default:
 				return null;
 		}
