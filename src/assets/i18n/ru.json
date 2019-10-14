@@ -7,6 +7,19 @@
 		"login": {
 			"titles": {
 				"enter": "Войти в аккаунт",
+				"don-t-have-account": "Нет учетной записи ?"
+			},
+			"links": {
+				"forgot-password": "Забыли пароль ?",
+				"create-account": "Зарегистрироваться"
+			},
+			"buttons": {
+				"submit": "Войти"
+			}
+		},
+		"restore": {
+			"titles": {
+				"enter": "Восстановить пароль",
 				"forgot-password": "Забыли пароль ?",
 				"don-t-have-account": "Нет учетной записи ?",
 				"create-account": "Зарегистрироваться"

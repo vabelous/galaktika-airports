@@ -1,5 +1,6 @@
 export enum FormControlActions {
 	Login = 'Вход в учетную запись',
+	Restore = 'Восстановление пароля',
 }
 
 export enum FormControlFields {

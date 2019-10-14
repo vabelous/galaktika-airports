@@ -25,7 +25,7 @@
 		</div>
 		<div fxLayout="row" fxLayoutAlign="end center" fxFlex="0 0 auto">
 			<a  href="/authentication/restore">
-				{{ 'authentication.login.titles.forgot-password' | translate }}
+				{{ 'authentication.login.links.forgot-password' | translate }}
 			</a>
 		</div>
 		<button
@@ -34,13 +34,13 @@
 			type="submit"
 			[disabled]="!loginForm.valid"
 		>
-		Войти
+		{{ 'authentication.login.buttons.submit' | translate }}
 		</button>
 	</form>
 	<div class="create-account" fxLayout="column" fxLayoutAlign="center center" fxFlex="0 0 auto">
 		<span class="text">{{ 'authentication.login.titles.don-t-have-account' | translate }}</span>
 		<a class="link" href="/authentication/registration">
-			{{ 'authentication.login.titles.create-account' | translate }}
+			{{ 'authentication.login.links.create-account' | translate }}
 		</a>
 	</div>
 </div>
