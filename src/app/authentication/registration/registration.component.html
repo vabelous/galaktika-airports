@@ -1,1 +1,43 @@
-<p>registration works!</p>
+<div class="form-container main" fxLayout="column">
+	<div class="title">
+			{{ 'authentication.registration.titles.enter' | translate }}
+	</div>
+	<form
+	[formGroup]="loginForm"
+	(ngSubmit)="onSubmit()"
+	fxLayout="column"
+	class="form"
+	>
+		<div formArrayName="ownControls">
+			<div *ngFor="let fc of ownControls.controls; let i=index" fxLayout="column">
+				<mat-form-field  appearance="outline">
+					<mat-label>{{(fc.label | async)}}</mat-label>
+						<input
+						[type]="fc.type"
+						[required]="fc.required"
+						[placeholder]="(fc.placeholder | async)"
+						[formControlName]="i"
+						matInput
+						>
+						<mat-icon matSuffix>{{fc.icon}}</mat-icon>
+						<mat-error *ngIf="fc.hasError('required')">{{'validators.required' | translate }}</mat-error>
+						<mat-error *ngIf="fc.hasError('email')">{{fc.errors['email'] | translate }}</mat-error>
+						<mat-error *ngIf="fc.hasError('name')">{{fc.errors['name'] | translate }}</mat-error>
+				</mat-form-field>
+			</div>
+		</div>
+		<button
+			mat-button
+			mat-raised-button
+			type="submit"
+			[disabled]="!loginForm.valid"
+		>
+		{{ 'authentication.registration.buttons.submit' | translate }}
+		</button>
+	</form>
+	<div class="create-account" fxLayout="column" fxLayoutAlign="center center" fxFlex="0 0 auto">
+		<a class="link" href="/authentication/login">
+			{{ 'authentication.registration.links.login' | translate }}
+		</a>
+	</div>
+</div>

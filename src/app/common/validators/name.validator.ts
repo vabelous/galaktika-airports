@@ -8,7 +8,7 @@ export const nameValidator: ValidatorFn = (formControl: AbstractControl): Valida
 	if (formControl.value) {
 		const isValid = namePattern.test(formControl.value.trim().toLowerCase());
 		if (!isValid) {
-		errors.invalidName = 'Недопустимое значение';
+		errors.name = 'validators.name';
 		}
 	}
 	return Object.keys(errors).length > 0 ? errors : null;

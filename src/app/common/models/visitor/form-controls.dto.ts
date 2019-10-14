@@ -1,11 +1,15 @@
 export enum FormControlActions {
-	Login = 'Вход в учетную запись',
+	Login = 'Вход аккаунт',
 	Restore = 'Восстановление пароля',
+	Registration = 'Создание аккаунта',
 }
 
 export enum FormControlFields {
 	Login = 'username',
 	Password = 'password',
+	PasswordConfirm = 'passwordConfirm',
+	firstName = 'firstName',
+	lastName = 'lastName',
 }
 
 export enum FormControlProperties {

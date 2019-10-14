@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { TranslateService } from '@ngx-translate/core';
 import { FormControlProperties, FormControlFields, DisabledPropertyTypes } from '@air-models/visitor';
 import { emailValidator } from '@air-validators/email.validator';
+import { nameValidator } from '@air-validators/name.validator';
 
 @Injectable({ providedIn: 'root' })
 export class FieldStateService {
@@ -39,6 +40,9 @@ export class FieldStateService {
 		switch (field) {
 			case FormControlFields.Login:
 			case FormControlFields.Password:
+			case FormControlFields.PasswordConfirm:
+			case FormControlFields.firstName:
+			case FormControlFields.lastName:
 				return DisabledPropertyTypes.enable as string;
 			default:
 				return DisabledPropertyTypes.enable as string;
@@ -50,7 +54,11 @@ export class FieldStateService {
 			case FormControlFields.Login:
 				return [Validators.required, emailValidator];
 			case FormControlFields.Password:
+			case FormControlFields.PasswordConfirm:
 				return [Validators.required];
+			case FormControlFields.firstName:
+			case FormControlFields.lastName:
+				return [Validators.required, nameValidator];
 			default:
 				return null;
 		}
@@ -60,6 +68,9 @@ export class FieldStateService {
 		switch (field) {
 			case FormControlFields.Login:
 			case FormControlFields.Password:
+			case FormControlFields.PasswordConfirm:
+			case FormControlFields.firstName:
+			case FormControlFields.lastName:
 				return null;
 			default:
 				return null;
@@ -71,7 +82,11 @@ export class FieldStateService {
 			case FormControlFields.Login:
 				return 'mail';
 			case FormControlFields.Password:
+			case FormControlFields.PasswordConfirm:
 				return 'vpn_key';
+			case FormControlFields.firstName:
+			case FormControlFields.lastName:
+				return 'account_circle';
 			default:
 				return null;
 		}
@@ -79,8 +94,11 @@ export class FieldStateService {
 	private getTypeProperty(field: FormControlFields): string {
 		switch (field) {
 			case FormControlFields.Login:
+			case FormControlFields.firstName:
+			case FormControlFields.lastName:
 				return 'text';
 			case FormControlFields.Password:
+			case FormControlFields.PasswordConfirm:
 				return 'password';
 			default:
 				return null;
@@ -91,6 +109,9 @@ export class FieldStateService {
 		switch (field) {
 			case FormControlFields.Login:
 			case FormControlFields.Password:
+			case FormControlFields.PasswordConfirm:
+			case FormControlFields.firstName:
+			case FormControlFields.lastName:
 				return null;
 			default:
 				return null;
@@ -103,6 +124,12 @@ export class FieldStateService {
 				return this.translate.get('visitor.placeholders.login');
 			case FormControlFields.Password:
 				return this.translate.get('visitor.placeholders.password');
+			case FormControlFields.PasswordConfirm:
+				return this.translate.get('visitor.placeholders.passwordConfirm');
+			case FormControlFields.firstName:
+				return this.translate.get('visitor.placeholders.firstName');
+			case FormControlFields.lastName:
+				return this.translate.get('visitor.placeholders.lastName');
 			default:
 				return null;
 		}
@@ -114,6 +141,12 @@ export class FieldStateService {
 				return this.translate.get('visitor.labels.login');
 			case FormControlFields.Password:
 				return this.translate.get('visitor.labels.password');
+			case FormControlFields.PasswordConfirm:
+				return this.translate.get('visitor.labels.passwordConfirm');
+			case FormControlFields.firstName:
+				return this.translate.get('visitor.labels.firstName');
+			case FormControlFields.lastName:
+				return this.translate.get('visitor.labels.lastName');
 			default:
 				return null;
 		}
@@ -122,8 +155,10 @@ export class FieldStateService {
 	private getRequiredProperty(field: FormControlFields): boolean {
 		switch (field) {
 			case FormControlFields.Login:
-				return true;
 			case FormControlFields.Password:
+			case FormControlFields.PasswordConfirm:
+			case FormControlFields.firstName:
+			case FormControlFields.lastName:
 				return true;
 			default:
 				return false;
