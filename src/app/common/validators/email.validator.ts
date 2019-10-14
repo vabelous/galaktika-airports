@@ -8,7 +8,7 @@ export const emailValidator: ValidatorFn = (formControl: AbstractControl): Valid
 	if (formControl.value) {
 		const isValid = emailPattern.test(formControl.value.trim().toLowerCase());
 		if (!isValid) {
-		errors.invalidEmail = 'Недопустимое значение';
+		errors.email = 'validators.email';
 		}
 	}
 	return Object.keys(errors).length > 0 ? errors : null;

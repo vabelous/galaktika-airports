@@ -20,13 +20,10 @@
 						matInput
 						>
 						<mat-icon matSuffix>{{fc.icon}}</mat-icon>
+						<mat-error *ngIf="fc.hasError('required')">{{'validators.required' | translate }}</mat-error>
+						<mat-error *ngIf="fc.hasError('email')">{{fc.errors['email'] | translate }}</mat-error>
 				</mat-form-field>
 			</div>
-		</div>
-		<div fxLayout="row" fxLayoutAlign="end center" fxFlex="0 0 auto">
-			<a  href="/authentication/restore">
-				{{ 'authentication.login.links.forgot-password' | translate }}
-			</a>
 		</div>
 		<button
 			mat-button
@@ -34,13 +31,12 @@
 			type="submit"
 			[disabled]="!loginForm.valid"
 		>
-		{{ 'authentication.login.buttons.submit' | translate }}
+		{{ 'authentication.restore.buttons.submit' | translate }}
 		</button>
 	</form>
 	<div class="create-account" fxLayout="column" fxLayoutAlign="center center" fxFlex="0 0 auto">
-		<span class="text">{{ 'authentication.login.titles.don-t-have-account' | translate }}</span>
-		<a class="link" href="/authentication/registration">
-			{{ 'authentication.login.links.create-account' | translate }}
+		<a class="link" href="/authentication/login">
+			{{ 'authentication.restore.links.login' | translate }}
 		</a>
 	</div>
 </div>

@@ -20,6 +20,8 @@
 						matInput
 						>
 						<mat-icon matSuffix>{{fc.icon}}</mat-icon>
+						<mat-error *ngIf="fc.hasError('required')">{{'validators.required' | translate }}</mat-error>
+						<mat-error *ngIf="fc.hasError('email')">{{fc.errors['email'] | translate }}</mat-error>
 				</mat-form-field>
 			</div>
 		</div>

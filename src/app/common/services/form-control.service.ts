@@ -69,6 +69,11 @@ export class FormControlService {
 						FormControlFields.Password
 					]);
 				},
+				[FormControlActions.Restore]: () => {
+					return new Set<FormControlFields>([
+						FormControlFields.Login
+					]);
+				},
 			});
 			formControlConfig.set(action.toString(), properties);
 		});
