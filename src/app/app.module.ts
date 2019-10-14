@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { I18nModule } from '@air-modules/i18n.module';
 import { PagesModule } from './pages/pages.module';
@@ -21,13 +20,13 @@ import { PagesModule } from './pages/pages.module';
 		AppRoutingModule,
 		BrowserAnimationsModule,
 		AuthenticationModule,
-		StoreModule.forRoot(reducers, {
-			metaReducers,
-			runtimeChecks: {
-				strictStateImmutability: true,
-				strictActionImmutability: true
-			}
-		})
+		// StoreModule.forRoot(reducers, {
+		// 	metaReducers,
+		// 	runtimeChecks: {
+		// 		strictStateImmutability: true,
+		// 		strictActionImmutability: true
+		// 	}
+		// })
 	],
 	providers: [],
 	bootstrap: [AppComponent]

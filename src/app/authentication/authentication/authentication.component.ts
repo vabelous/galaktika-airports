@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { OverlayContainer } from '@angular/cdk/overlay';
 
 @Component({
 	selector: 'app-authentication',
