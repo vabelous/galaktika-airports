@@ -8,7 +8,7 @@ import { VisitorFormArray, FormControlActions } from '@air-models/visitor';
 @Component({
 	selector: 'app-restore',
 	templateUrl: './restore.component.html',
-	styleUrls: ['./restore.component.sass']
+	styleUrls: ['./restore.component.scss']
 })
 export class RestoreComponent implements OnInit {
 

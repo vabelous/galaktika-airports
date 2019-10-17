@@ -19,12 +19,31 @@
 		},
 		"restore": {
 			"titles": {
-				"enter": "Восстановить пароль",
-				"forgot-password": "Забыли пароль ?",
-				"don-t-have-account": "Нет учетной записи ?",
-				"create-account": "Зарегистрироваться"
-      }
+				"enter": "Восстановить пароль"
+			},
+			"links": {
+				"login": "Вернуться к аутентификации"
+			},
+			"buttons": {
+				"submit": "Отправить ссылку"
+			}
+		},
+		"registration": {
+			"titles": {
+				"enter": "Создать аккаунт"
+			},
+			"links": {
+				"login": "Вернуться к аутентификации"
+			},
+			"buttons": {
+				"submit": "Зарегистрироваться"
+			}
 		}
+	},
+	"validators":{
+		"required": "Поле обязательное для заполнения",
+		"email": "Недопустимый формат",
+		"name": "Недопустимый формат"
 	},
 	"pages": {
     "error403": {
@@ -38,12 +57,18 @@
   },
   "visitor": {
     "labels": {
+			"firstName": "Имя",
+			"lastName": "Фамилия",
       "login": "Логин",
-      "password": "Пароль"
+			"password": "Пароль",
+			"passwordConfirm": "Пароль (Подтверждение)"
     },
     "placeholders": {
+			"firstName": "Введите имя",
+			"lastName": "Введите фамилию",
       "login": "Введите логин",
-      "password": "Введте пароль"
+			"password": "Введте пароль",
+			"passwordConfirm": "Введте пароль (Подтверждение)"
     }
   }
 }
