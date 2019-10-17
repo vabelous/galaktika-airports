@@ -1,11 +1,11 @@
-import { AuthActions, AuthActionTypes } from '@air-actions';
+import { AuthActions, AuthActionTypes } from '@air-common/state/actions';
 
-export interface AuthState {
+export interface AuthenticationState {
 	access_token: string;
 	refresh_token: string;
 }
 
-export const initialState: AuthState = {
+export const initialState: AuthenticationState = {
 	access_token: null,
 	refresh_token: null
 };

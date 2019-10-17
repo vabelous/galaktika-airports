@@ -1,14 +1,14 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import * as fromReducers from '@sfo-store/reducers';
+import * as fromReducers from '@air-common/state/reducers';
 
 const selectLoginData = createFeatureSelector('auth');
 
 export const selectAccessToken = createSelector(
 	selectLoginData,
-	(state: fromReducers.auth.AuthState) => state.access_token
+	(state: fromReducers.authentication.AuthenticationState) => state.access_token
 );
 
 export const selectRefreshToken = createSelector(
 	selectLoginData,
-	(state: fromReducers.auth.AuthState) => state.refresh_token
+	(state: fromReducers.authentication.AuthenticationState) => state.refresh_token
 );

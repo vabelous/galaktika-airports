@@ -11,7 +11,7 @@ export class AuthenticationService {
 	constructor(
 		private http: HttpClient,
 		private restAPIService: RestAPIService
-	) { this.baseUrl = '/authentication'; }
+	) { this.baseUrl = '/api/authentication'; }
 
 	/**
 	 *

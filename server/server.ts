@@ -32,19 +32,19 @@ function verifyToken(token) {
 }
 
 // Проверка наличия учетной записи пользователя в ХД
-function isAuthenticated({email, password}) {
-	return userdb.users.findIndex(user => user.email === email && user.password === password) !== -1;
+function isAuthenticated({username, password}) {
+	return userdb.users.findIndex(user => user.username === username && user.password === password) !== -1;
 }
 
 // Регистрация пользователя
-server.post('/authentication/registration', (req, res) => {
+server.post('/api/authentication/registration', (req, res) => {
 	console.log('registration endpoint вызвана; request body:');
 	console.log(req.body);
-	const {email, password} = req.body;
+	const {username, password} = req.body;
 
-	if (isAuthenticated({email, password}) === true) {
+	if (isAuthenticated({username, password}) === true) {
 		const status = 401;
-		const message = 'Email и Пароль уже существуют';
+		const message = 'Имя и Пароль уже существуют';
 		res.status(status).json({status, message});
 		return;
 	}
@@ -64,7 +64,7 @@ server.post('/authentication/registration', (req, res) => {
 		const lastItemId = data.users[data.users.length - 1].id;
 
 		// Добавление пользователя
-		data.users.push({id: lastItemId + 1, email, password});
+		data.users.push({id: lastItemId + 1, username, password});
 
 		// Запись данных в ХД
 		const writeData = fs.writeFile('./users.json', JSON.stringify(data), (err, result) => {
@@ -78,26 +78,26 @@ server.post('/authentication/registration', (req, res) => {
 	});
 
 	// Создание токена для нового пользователя
-	const access_token = createToken({email, password});
-	const refresh_token = refreshToken({email, password});
+	const access_token = createToken({username, password});
+	const refresh_token = refreshToken({username, password});
 	console.log("Access Token: ", access_token);
 	console.log("Refresh Token: ", refresh_token);
 	res.status(200).json({access_token, refresh_token});
 });
 
 // Авторизация для пользователя из  ./users.json
-server.post('/authentication/login', (req, res) => {
+server.post('/api/authentication/login', (req, res) => {
 	console.log('login endpoint вызвана; request body:');
 	console.log(req.body);
-	const {email, password} = req.body;
-	if (isAuthenticated({email, password}) === false) {
+	const {username, password} = req.body;
+	if (isAuthenticated({username, password}) === false) {
 		const status = 401;
-		const message = 'Неправильный Email или Пароль';
+		const message = 'Неправильные имя пользователя или пароль';
 		res.status(status).json({status, message});
 		return;
 	}
-	const access_token = createToken({email, password});
-	const refresh_token = refreshToken({email, password});
+	const access_token = createToken({username, password});
+	const refresh_token = refreshToken({username, password});
 	console.log("Access Token: ", access_token);
 	console.log("Refresh Token: ", refresh_token);
 	res.status(200).json({access_token, refresh_token});

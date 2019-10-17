@@ -4,7 +4,8 @@ import { FormBuilder } from '@angular/forms';
 import { FormControlService } from '@air-services/form-control.service';
 import { VisitorFormArray, FormControlActions } from '@air-models/visitor';
 import { OverlayContainer } from '@angular/cdk/overlay';
-
+import { Login } from '@air-common/state/actions';
+import { Store } from '@ngrx/store';
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
@@ -16,6 +17,7 @@ export class LoginComponent implements OnInit {
 	public loginForm: FormGroup;
 
 	constructor(
+		private store: Store<any>,
 		private formBuilder: FormBuilder,
 		private formControlService: FormControlService,
 		private overlayContainer: OverlayContainer,
@@ -39,6 +41,10 @@ export class LoginComponent implements OnInit {
 	}
 
 	onSubmit() {
+		this.store.dispatch(new Login({
+			username: this.loginForm.value.ownControls[0],
+			password: this.loginForm.value.ownControls[1],
+		}));
 
 	}
 
