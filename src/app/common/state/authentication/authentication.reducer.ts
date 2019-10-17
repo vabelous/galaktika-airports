@@ -1,5 +1,4 @@
-// import { AuthActions, AuthActionTypes } from '@sfo-store/actions/auth.actions';
-import { AuthActions, AuthActionTypes } from '@sfo-actions';
+import { AuthActions, AuthActionTypes } from '@air-actions';
 
 export interface AuthState {
 	access_token: string;
@@ -19,6 +18,18 @@ export const reducer = (state = initialState, action: AuthActions) => {
 				pending: true
 			};
 		case AuthActionTypes.LoginSuccess:
+			return {
+				...state,
+				access_token: action.payload['access_token'],
+				refresh_token: action.payload['refresh_token'],
+				pending: false
+			};
+		case AuthActionTypes.Registration:
+			return {
+				...state,
+				pending: true
+			};
+		case AuthActionTypes.RegistrationSuccess:
 			return {
 				...state,
 				access_token: action.payload['access_token'],
