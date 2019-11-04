@@ -8,8 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-		"server": "ts-node ./server/server.ts",
-		"start-localhost": "ng serve --proxy-config proxy/localhost.config.json"
+    "server": "ts-node ./server/server.ts",
+    "start-localhost": "ng serve --proxy-config proxy/localhost.config.json"
   },
   "private": true,
   "dependencies": {
